@@ -130,10 +130,10 @@ select1.addEventListener("change", function() {
 function delTable(filmsNew1){
   var my_table = document.getElementsByClassName("tableDiv");
   var oh_my = my_table[0];
-  var child = oh_my.firstChild; //дочерний элемент, который надо заменить
+  var child = oh_my.firstChild; 
 
-  var newTable1 = document.createElement("table"); //создаю то, на что надо заменить
-  newTable1.className = "filmsTable"; //дальше процесс создания можно не читать
+  var newTable1 = document.createElement("table"); 
+  newTable1.className = "filmsTable";
 
   for (let film of filmsNew1) {
         
@@ -165,9 +165,9 @@ function delTable(filmsNew1){
     td4.appendChild(imageUrl);
     tr.appendChild(td4);
         
-    newTable1.appendChild(tr); //получаю новую таблицу, на которую нужно изменить старую
+    newTable1.appendChild(tr);
   };
-  oh_my.replaceChild(newTable1, child); //не меняется...
+  oh_my.replaceChild(newTable1, child); 
 };
 
 
