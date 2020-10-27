@@ -55,7 +55,7 @@ function createTable(checkTable){
       
         divForTable.appendChild(newTable)
           
-        elementNavigation = document.getElementById("tableR");
+        elementNavigation = document.getElementById("footer");
         document.body.insertBefore(divForTable, elementNavigation);
 
       };
