@@ -60,14 +60,14 @@ function createTable(checkTable){
 
       };
     } else {
-      var elementForChange = document.getElementsByClassName("tableDiv")[0];
-
-      var tableForDelete = elementForChange.firstChild; 
-
       tableUpdate.appendChild(tr); 
     };
   };
   if (checkTable == true) {
+    var elementForChange = document.getElementsByClassName("tableDiv")[0];
+
+    var tableForDelete = elementForChange.firstChild; 
+
     elementForChange.replaceChild(tableUpdate, tableForDelete);
   };
 };
