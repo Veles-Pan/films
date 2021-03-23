@@ -2,15 +2,15 @@ import { filmsJson } from './film-list.js';
 
 console.log(filmsJson);
 
-let initialFilmsList = Object.values(filmsJson);
+const initialFilmsList = Object.values(filmsJson);
 
-var navigationElement = null;
+const navigationElement = null;
 
-var newTable = document.createElement("table");
+const newTable = document.createElement("table");
 newTable.className = "filmsTable";
 
 document.body.onload = onLoad;
-var elementNavigation = null;
+const elementNavigation = null;
 
 function sortFilmsByName(filmsList) {
   return filmsList.sort(function(a, b){
@@ -38,7 +38,7 @@ function createOption({ value, label, select }) {
 }
 function onLoad() {
   console.log(initialFilmsList);
-  var divForTable = document.createElement("div");
+  const divForTable = document.createElement("div");
   divForTable.className = "tableDiv"
   divForTable.id = "tableDiv";
 
@@ -46,7 +46,7 @@ function onLoad() {
 
   elementNavigation = document.getElementById("footer");
   document.body.insertBefore(divForTable, elementNavigation);
-  var newSelect = document.createElement('select');
+  const newSelect = document.createElement('select');
   newSelect.className = "selector__field";
   newSelect.id = 'selectId'
 
@@ -57,7 +57,7 @@ function onLoad() {
   createOption({ value: "sortName", label: 'Сортировать по алфавиту (A-Z)', select: newSelect });
   createOption({ value: "sortNameReverse", label: 'Сортировать по алфавиту (Z-A)', select: newSelect });
 
-  var divForSelect = document.createElement("div");
+  const divForSelect = document.createElement("div");
   divForSelect.className = "selector"
 
   divForSelect.appendChild(newSelect)
@@ -109,19 +109,19 @@ function createCell({ tr, classname, value }) {
 
 function createTable(checkTable, filmsList) {
 
-  var tableUpdate = document.createElement("table");
+  const tableUpdate = document.createElement("table");
   tableUpdate.className = "filmsTable";
 
   for (let film of filmsList) {
-    var tr = document.createElement('tr');
+    const tr = document.createElement('tr');
     tr.className = "thisIsTr";
 
     createCell({ tr: tr, classname: 'filmName', value: film.Name_eng })
     createCell({ tr: tr, classname: 'filmRating', value: film.Rating })
     createCell({ tr: tr, classname: 'filmYear', value: film.Year })
 
-    let td4 = document.createElement('td');
-    let imageUrl = document.createElement('img');
+    const td4 = document.createElement('td');
+    const imageUrl = document.createElement('img');
     imageUrl.className = "image";
     imageUrl.src = film.Image;
     imageUrl.alt = film.Name_rus;
@@ -137,9 +137,9 @@ function createTable(checkTable, filmsList) {
     }
   }
   if (checkTable === true) {
-    var elementForChange = document.getElementsByClassName("tableDiv")[0];
+    const elementForChange = document.getElementsByClassName("tableDiv")[0];
 
-    var tableForDelete = elementForChange.firstChild;
+    const tableForDelete = elementForChange.firstChild;
 
     elementForChange.replaceChild(tableUpdate, tableForDelete);
   }
