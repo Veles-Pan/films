@@ -1,4 +1,6 @@
-import filmsJson from './flm.json';
+import { filmsJson } from './film-list.js';
+
+console.log(filmsJson);
 
 let initialFilmsList = Object.values(filmsJson);
 
@@ -45,7 +47,7 @@ function onLoad() {
   elementNavigation = document.getElementById("footer");
   document.body.insertBefore(divForTable, elementNavigation);
   var newSelect = document.createElement('select');
-  newSelect.className = "selectFunc";
+  newSelect.className = "selector__field";
   newSelect.id = 'selectId'
 
   createOption({ value: "sortRating", label: 'Сортировать по рейтингу (убывание)', select: newSelect });
@@ -56,7 +58,7 @@ function onLoad() {
   createOption({ value: "sortNameReverse", label: 'Сортировать по алфавиту (Z-A)', select: newSelect });
 
   var divForSelect = document.createElement("div");
-  divForSelect.className = "mySelect"
+  divForSelect.className = "selector"
 
   divForSelect.appendChild(newSelect)
   navigationElement = document.getElementById("tableDiv");
