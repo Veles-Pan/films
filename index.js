@@ -1,16 +1,14 @@
 import { filmsJson } from './film-list.js';
 
-console.log(filmsJson);
-
 const initialFilmsList = Object.values(filmsJson);
 
-const navigationElement = null;
+let navigationElement = null;
 
 const newTable = document.createElement("table");
 newTable.className = "filmsTable";
 
 document.body.onload = onLoad;
-const elementNavigation = null;
+let elementNavigation = null;
 
 function sortFilmsByName(filmsList) {
   return filmsList.sort(function(a, b){
@@ -37,7 +35,6 @@ function createOption({ value, label, select }) {
   select.appendChild(option);
 }
 function onLoad() {
-  console.log(initialFilmsList);
   const divForTable = document.createElement("div");
   divForTable.className = "tableDiv"
   divForTable.id = "tableDiv";
@@ -101,7 +98,7 @@ function onLoad() {
 }
 
 function createCell({ tr, classname, value }) {
-  let td = document.createElement('td');
+  const td = document.createElement('td');
   td.className = classname;
   td.innerHTML = value;
   tr.appendChild(td);
